@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
 import styled from "styled-components";
 import {
     Link
 } from "react-router-dom";
+
+import Hamburger from './components/Hamburger';
 
 const StyledNav = styled.nav`
     display: flex;
@@ -12,27 +14,50 @@ const StyledNav = styled.nav`
     grid-area: top;
 `;
 
-const StyledLink = styled(Link)`
-    color: #ffffffeb;
+const links = [
+    {
+        id:1,
+        to: "/",
+        text: "Home"
+      },
+      {
+        id:2,
+        to: "/contact",
+        text: "Contact"
+      },
+      {
+        id:3,
+        to: "/about",
+        text: "About"
+      },
+      {
+        id:3,
+        to: "/projects",
+        text: "Projects"
+      },
+]
+
+export const StyledLink = styled(Link)`
+    color: #421d82eb;
     flex: 1;
     text-align: center;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
-    background: #2c1b42;
-    border-radius: 30px;
-    padding: 8px 12px;
-    margin: 3rem;
 `;
 
 const Navbar = () => {
+     /* const [isOpen, setItOpen] = useState(false); */
+
     return (
-        <StyledNav>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/contact">Contact</StyledLink>
-            <StyledLink to="/portfolio">Portfolio</StyledLink>
-            <StyledLink to="/about">About</StyledLink>
+      <>
+              <StyledNav>
+            {links.map(link => <StyledLink to={link.to} key={link.text}>{link.text}</StyledLink>)}
         </StyledNav>
+        <Hamburger links={links}>
+
+        </Hamburger>
+      </>
     );
 }
 

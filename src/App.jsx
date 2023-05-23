@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
+import Hero from './Hero';
 import './app.css';
 
 import {
@@ -29,6 +34,9 @@ border-radius: 50%;
 
 const MainContainer = styled.div`
 grid-area: main;
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 const GridContainer = styled.div`
@@ -53,16 +61,20 @@ function App() {
           <StyledImg src={logo} alt="Logo" /> 
         </LogoContainer>
         <Navbar />
+        <Hero text="MyHero" /> 
         <MainContainer>
         <Switch>
+        <Route path="/contact">
+            <Contact />
+          </Route>
           <Route path="/about">
-            <p>About</p>
+            <About />
           </Route>
           <Route path="/portfolio">
-            <p>Portfolio</p>
+            <Portfolio />
           </Route>
           <Route path="/">
-            <p>Home</p>
+            <Home />
           </Route>
         </Switch>
         <h1>Hello Aylin</h1>
@@ -73,14 +85,7 @@ function App() {
   );
 }
 
-// Läxa tills 7/3:
-// Skapa din personliga footer i samråd med andra på Discord.
-// titta på exempel på andra porföljer
-// Du kan t.ex linkedin-ikon och github-ikon figma-ikon ?
-// Tips: "Fontawsome"
-// Obs. Discort är ICKE frivilligt; men ni behöver inte göra hela läxan på discord
-// Om du blir klar nmed detta; gör samma sak med Navbar
-// Pusha ditt projekt till github: skicka länk till mig.
+
 
 
 export default App;

@@ -5,7 +5,6 @@ import github from './assets/github.png';
 import instagram from './assets/instagram.png';
 import linkedin from './assets/linkedin.png';
 import telegram from './assets/telegram.png';
-import logo from './assets/logo.jpeg';
 
 const StyledFooter = styled.footer`
   grid-area: footer;
@@ -28,14 +27,45 @@ const StyledImg = styled.img`
 width: 100%;
 `;
 
+let footerData = [
+    {
+        id: 1,
+        to: "https://www.figma.com/login",
+        icon: figma,
+        alt: "figma"
+    },
+    {
+        id: 2,
+        to: "https://github.com/aylin-kgz",
+        icon: github,
+        alt: "github"
+    },
+    {
+        id: 3,
+        to: "https://www.instagram.com/",
+        icon: instagram,
+        alt: "instagram"
+    },
+    {
+        id: 4,
+        to: "https://www.linkedin.com/in/aylin-westin-31241224b/",
+        icon: linkedin,
+        alt: "linkedin"
+    },
+    {
+        id: 5,
+        to: "https://telegram.org/",
+        icon: telegram,
+        alt: "telegram"
+    },
+]
+
 const Footer = () => {
     return (
         <StyledFooter>
-            <a href="https://www.figma.com/login"><StyleImg src={figma} alt="Figma" /></a>
-            <a href="https://github.com/aylin-kgz"><StyleImg src={github} alt="Github" /></a>
-            <a href="https://www.instagram.com/"><StyleImg src={instagram} alt="Instagram" /></a>
-            <a href="https://www.linkedin.com/in/aylin-westin-31241224b/"><StyleImg src={linkedin} alt="Linkedin" /></a>
-            <a href="https://telegram.org/"><StyleImg src={telegram} alt="Telegram" /></a>
+            {footerData.map(link => (
+            <a href={link.to} key={link.icon}><StyleImg src={link.icon}/></a>
+            ))}
             <p>© 2023 Aylin Westin</p>
         </StyledFooter>
     );
