@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Form from '../components/Form';
 
-function Portfolio() {
+function Projects() {
 
     return (
         <>
-            <p>Portfolio</p>
-            <Form />
+            <h1>My Latest projects</h1>
         </>
     );
 }
 
-export default Portfolio;
+export default Projects;

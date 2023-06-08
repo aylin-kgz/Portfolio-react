@@ -10,8 +10,8 @@ function Card() {
         <CardContainer>
             <StyledCodingPic src={codingPic} alt="=Coding" />
             <StyledReactPic src={reactPic} alt="=React" />
-            <h1>React Portfolio</h1>
-            <StyledP>Please behold my amazing React portfolio, showcasing my immense skills.</StyledP>
+            <h1>Cookwise AB</h1>
+            <StyledP>Take control of your oven using your smartphone</StyledP>
             <StyledButton>View more</StyledButton>
         </CardContainer>
     )

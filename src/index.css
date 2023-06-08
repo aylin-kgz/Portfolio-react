@@ -13,10 +13,11 @@
 
 body {
   margin: 0;
-/*   background: linear-gradient(rgba(235, 227, 255, 0.678),rgba(3, 9, 31, 0.7)),url(assets/background.jpg);
+  background: white;
+/*   background: linear-gradient(rgba(251, 251, 251, 0.678),rgba(255, 255, 255, 0.7)),url(assets/back.jpg); */
   background-size: cover;
   background-position: center;
-  position: relative; */
+  position: relative;
 }
 
 

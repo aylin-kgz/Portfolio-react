@@ -5,7 +5,7 @@ import Footer from './Footer';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
+import Projects from './pages/Projects';
 import Hero from './Hero';
 import './app.css';
 
@@ -15,7 +15,6 @@ import {
   Switch
 } from "react-router-dom";
 
-import logo from './assets/logo.jpeg';
 
 const MyButton = styled.button`
   padding: 4em;
@@ -23,13 +22,7 @@ const MyButton = styled.button`
 `;
 
 const LogoContainer = styled.div`
-max-width: 3.5rem;
 grid-area: logo;
-`;
-
-const StyledImg = styled.img`
-width: 100%;
-border-radius: 50%;
 `;
 
 const MainContainer = styled.div`
@@ -58,10 +51,10 @@ function App() {
     <Router>
       <GridContainer>
         <LogoContainer> 
-          <StyledImg src={logo} alt="Logo" /> 
+          Aylin Westin
         </LogoContainer>
         <Navbar />
-        <Hero text="MyHero" /> 
+        {/* <Hero text="MyHero" />  */}
         <MainContainer>
         <Switch>
         <Route path="/contact">
@@ -70,14 +63,13 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/portfolio">
-            <Portfolio />
+          <Route path="/projects">
+            <Projects />
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-        <h1>Hello Aylin</h1>
         </MainContainer>
         <Footer />
       </GridContainer>

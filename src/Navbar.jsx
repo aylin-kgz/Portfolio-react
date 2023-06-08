@@ -10,8 +10,9 @@ const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     grid-area: top;
+    
 `;
 
 const links = [
@@ -19,11 +20,6 @@ const links = [
         id:1,
         to: "/",
         text: "Home"
-      },
-      {
-        id:2,
-        to: "/contact",
-        text: "Contact"
       },
       {
         id:3,
@@ -35,6 +31,11 @@ const links = [
         to: "/projects",
         text: "Projects"
       },
+      {
+        id:2,
+        to: "/contact",
+        text: "Contact"
+      },
 ]
 
 export const StyledLink = styled(Link)`
@@ -44,6 +45,7 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
+    /* margin-top: 1rem; */
 `;
 
 const Navbar = () => {
