@@ -37,7 +37,7 @@ display: grid;
 grid-template-rows: 10rem repeat(3, 1fr) 10rem;
 grid-template-columns: repeat(5, 1fr);
 grid-template-areas: 
-"logo top top top top"
+"top top top top top"
 "main main main main main"
 "main main main main main"
 "main main main main main"
@@ -50,11 +50,10 @@ function App() {
   return (
     <Router>
       <GridContainer>
-        <LogoContainer> 
+{/*         <LogoContainer> 
           Aylin Westin
-        </LogoContainer>
+        </LogoContainer> */}
         <Navbar />
-        {/* <Hero text="MyHero" />  */}
         <MainContainer>
         <Switch>
         <Route path="/contact">
@@ -70,7 +69,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        </MainContainer>
+        </MainContainer>  
         <Footer />
       </GridContainer>
     </Router>

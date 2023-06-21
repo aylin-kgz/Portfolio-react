@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import ResumePDF from '../assets/resumepdf.pdf';
+import AboutJpg from '../assets/about.jpg';
+import HobbiJpeg from '../assets/hobbi.jpeg';
 
 const HeroSection = styled.div`
   display: grid;
@@ -47,13 +50,13 @@ const RightImage = styled.img`
 
 const ResumeButton = styled.button`
   padding: 14px 20px;
-  background-color: #000000;
+  background-color: #30273e;
   color: #fff;
   border: none;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 0;
+  margin-left: -480px;
   width: 150px;
   margin-top: 20px;
 `;
@@ -62,7 +65,7 @@ function About() {
     return (
       <HeroSection>
         <div>
-          <AboutImage src="src/assets/about.jpg" alt="About Image" />
+          <AboutImage src={AboutJpg} alt="About Image" />
           <AdditionalText>
             <h1>What I do when I'm not working</h1>
             <p>
@@ -96,9 +99,9 @@ function About() {
             <p>
               <span>Let's collaborate and create delightful experiences together!</span>
             </p>
-            <ResumeButton>My Resumé</ResumeButton>
+          <a href={ResumePDF}><ResumeButton>My Resumé</ResumeButton></a>
           </HeroText>
-          <RightImage src="src/assets/hobby.jpg" alt="Right Image" />
+          <RightImage src={HobbiJpeg} alt="Right Image" />
         </div>
       </HeroSection>
     );

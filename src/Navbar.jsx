@@ -1,18 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import {
-    Link
-} from "react-router-dom";
-
-import Hamburger from './components/Hamburger';
+import { Link, useLocation } from "react-router-dom";
 
 const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    /* align-items: center; */
+    justify-content: space-evenly;
     grid-area: top;
-    
 `;
 
 const links = [
@@ -39,28 +33,43 @@ const links = [
 ]
 
 export const StyledLink = styled(Link)`
-    color: #421d82eb;
+    color: #010101eb;
     flex: 1;
     text-align: center;
     text-decoration: none;
-    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+
+    &:hover {
+    color: #906bff; 
     font-weight: bold;
-    /* margin-top: 1rem; */
+    text-decoration: underline; 
+  }
+
+  &.active {
+    font-weight: bold;
+    text-decoration: underline; 
+  }
 `;
 
 const Navbar = () => {
-     /* const [isOpen, setItOpen] = useState(false); */
+  const { pathname } = useLocation();
 
-    return (
-      <>
-              <StyledNav>
-            {links.map(link => <StyledLink to={link.to} key={link.text}>{link.text}</StyledLink>)}
-        </StyledNav>
-        <Hamburger links={links}>
-
-        </Hamburger>
-      </>
-    );
-}
+  return (
+    <>
+      <StyledNav>
+        {links.map((link) => (
+          <StyledLink
+            to={link.to}
+            key={link.text}
+            className={pathname === link.to ? "active" : ""}
+          >
+            {link.text}
+          </StyledLink>
+        ))}
+      </StyledNav>
+    </>
+  );
+};
 
 export default Navbar;

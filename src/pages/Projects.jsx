@@ -1,14 +1,102 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Form from '../components/Form';
 
-function Projects() {
+const Container = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`;
 
-    return (
-        <>
-            <h1>My Latest projects</h1>
-        </>
-    );
-}
+const Title = styled.h2`
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 5rem;
+`;
 
-export default Projects;
+const CardContainer = styled.div`
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const Card = styled.div`
+  flex: 0 0 auto;
+  width: 360px;
+  height: 450px;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const CardImage = styled.div`
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+`;
+
+const CardContent = styled.div`
+  padding: 20px;
+`;
+
+const ProjectTitle = styled.h3`
+  margin-bottom: 10px;
+`;
+
+const ProjectDescription = styled.p`
+  color: #666666;
+`;
+
+const projects = [
+  {
+    id: 1,
+    title: 'EcoConnect',
+    description: 'Green Tech organization platform',
+    backgroundImage: 'url("/src/assets/Ecoconnect.jpg")',
+  },
+  {
+    id: 2,
+    title: 'CookWise AB',
+    description: 'Take control of your oven using your smartphone',
+    backgroundImage: 'url("/src/assets/mockup.png")',
+  },
+  {
+    id: 3,
+    title: 'HooBank',
+    description: 'The next generation payment method',
+    backgroundImage: 'url("/src/assets/Hoobank.jpg")',
+  },
+];
+
+const MyProjects = () => {
+  return (
+    <Container>
+      <Title>My latest projects! 👩🏻‍💻 </Title>
+      <CardContainer>
+        {projects.map((project) => (
+          <Card key={project.id}>
+            <CardImage style={{ backgroundImage: project.backgroundImage }} />
+            <CardContent>
+              <ProjectTitle>{project.title}</ProjectTitle>
+              <ProjectDescription>{project.description}</ProjectDescription>
+            </CardContent>
+          </Card>
+        ))}
+      </CardContainer>
+    </Container>
+  );
+};
+
+export default MyProjects;
