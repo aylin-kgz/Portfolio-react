@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import heroImg from "./assets/back.jpg";
 
   const HeroContainer = styled.div`
-  background-image: url("src/assets/back.jpg");
+  background-image: url(${heroImg});
   background-size: cover;
   display: flex;
   align-items: center;
@@ -18,7 +19,7 @@ const HeroBackground = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("src/assets/back.jpg");
+  background-image: url(${heroImg});
   background-size: cover;
   background-position: center;
   filter: blur(4px);

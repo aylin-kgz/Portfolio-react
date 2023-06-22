@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ResumePDF from '../assets/resumepdf.pdf';
 import AboutJpg from '../assets/about.jpg';
 import HobbiJpeg from '../assets/hobbi.jpeg';
 
@@ -13,7 +12,7 @@ const HeroSection = styled.div`
 
 const AboutImage = styled.img`
   width: 100%; 
-  margin-bottom: 150px;
+  margin-bottom: 16rem;
 `;
 
 const HeroText = styled.div`
@@ -21,6 +20,7 @@ const HeroText = styled.div`
   font-size: 18px;
   flex-direction: column; 
   justify-content: flex-start; 
+  color: #282A2B;
 
   h1 {
     font-weight: 800;
@@ -28,6 +28,7 @@ const HeroText = styled.div`
   }
   p {
     text-align: left; 
+    color: #1C1B1EBF;  
   }
 `;
 
@@ -36,10 +37,12 @@ const AdditionalText = styled.p`
   font-size: 18px;
   margin-bottom: 80px;
   margin-right: 25px;
+  color:#1C1B1EBF;
 
   h1 {
     font-weight: 800;
     margin-bottom: 35px;
+    color: #282A2B;
   }
 `;
 
@@ -50,7 +53,7 @@ const RightImage = styled.img`
 
 const ResumeButton = styled.button`
   padding: 14px 20px;
-  background-color: #30273e;
+  background-color: #282A2B;
   color: #fff;
   border: none;
   font-size: 16px;
@@ -99,7 +102,7 @@ function About() {
             <p>
               <span>Let's collaborate and create delightful experiences together!</span>
             </p>
-          <a href={ResumePDF}><ResumeButton>My Resumé</ResumeButton></a>
+          <a href="https://drive.google.com/file/d/1dU6jX3oMluEvbxT8XwCwrunR51zI03IL/view?usp=sharing" target="_blank" rel="noopener noreferrer"><ResumeButton>My Resumé</ResumeButton></a>
           </HeroText>
           <RightImage src={HobbiJpeg} alt="Right Image" />
         </div>

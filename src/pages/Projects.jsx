@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import EcoConnectImage from '../assets/Ecoconnect.jpg';
+import MockupImage from '../assets/mockup.png';
+import HooBankImage from '../assets/Hoobank.jpg';
+
 
 const Container = styled.div`
-  max-width: 800px;
+  max-width: 75%;
   margin: 0 auto;
 `;
 
@@ -26,8 +30,8 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   flex: 0 0 auto;
-  width: 360px;
-  height: 450px;
+  width: 390px;
+  height: 500px;
   margin-right: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,11 +56,13 @@ const CardContent = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
+  font-size: 25px;
   margin-bottom: 10px;
 `;
 
 const ProjectDescription = styled.p`
   color: #666666;
+  font-size: 18px;
 `;
 
 const projects = [
@@ -64,19 +70,19 @@ const projects = [
     id: 1,
     title: 'EcoConnect',
     description: 'Green Tech organization platform',
-    backgroundImage: 'url("/src/assets/Ecoconnect.jpg")',
+    backgroundImage: `url(${EcoConnectImage})`,
   },
   {
     id: 2,
     title: 'CookWise AB',
     description: 'Take control of your oven using your smartphone',
-    backgroundImage: 'url("/src/assets/mockup.png")',
+    backgroundImage: `url(${MockupImage})`,
   },
   {
     id: 3,
     title: 'HooBank',
     description: 'The next generation payment method',
-    backgroundImage: 'url("/src/assets/Hoobank.jpg")',
+    backgroundImage: `url(${HooBankImage})`,
   },
 ];
 

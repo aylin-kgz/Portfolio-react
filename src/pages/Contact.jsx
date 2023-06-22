@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import CotactJpeg from '../assets/cotact.jpeg';
 
 const Container = styled.div`
-  background-image: url('src/assets/cotact.jpeg');
+  background-image: url(${CotactJpeg});
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -15,10 +15,11 @@ const Container = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.962);
+  background-color: rgba(255, 255, 255, 0.971);
   padding: 2rem;
   max-width: 700px;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 `;
 
 const Title = styled.h1`
@@ -43,6 +44,7 @@ const Description = styled.p`
   font-size: 18px;
   margin-bottom: 2rem;
 `;
+
 
 const Contact = () => {
   return (
